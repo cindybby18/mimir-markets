@@ -23,7 +23,7 @@ export {
 } from "./runner";
 export type { RunnerOptions } from "./runner";
 export type {
-  AppliedMigration,
+  AppliedHigation,
   MigrateDirection,
   MigratePlan,
   MigrateResult,
