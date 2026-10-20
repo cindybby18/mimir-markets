@@ -1,0 +1,24 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "feat/issue-400-feat-api-expose-read-index-lag-in-the-health",
+    "feat/issue-469-feat-ui-surface-stale-index-warnings-on-the",
+    "main",
+    "origin",
+    "security/issue-394-refactor-api-centralize-client-ip-extraction"
+  ],
+  "parent": {
+    "feat/issue-400-feat-api-expose-read-index-lag-in-the-health": "main",
+    "feat/issue-469-feat-ui-surface-stale-index-warnings-on-the": "main",
+    "main": null,
+    "origin": "main",
+    "security/issue-394-refactor-api-centralize-client-ip-extraction": "main"
+  },
+  "order": [
+    "main",
+    "feat/issue-400-feat-api-expose-read-index-lag-in-the-health",
+    "feat/issue-469-feat-ui-surface-stale-index-warnings-on-the",
+    "origin",
+    "security/issue-394-refactor-api-centralize-client-ip-extraction"
+  ]
+}
