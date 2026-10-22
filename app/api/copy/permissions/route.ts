@@ -68,9 +68,9 @@ function jsonResponse(data: unknown, init?: ResponseInit): Response {
 }
 
 export async function POST(req: Request): Promise<Response> {
-  const { authorizeRequest } = await import("../lib/api/policy");
+  const { authorizeRequest } = await import("@/lib/api/policy");
   const ip = clientIpFrom(req.headers);
-  const gate = authorizeRequest("public_read", { route: "/api/copy/permissions", ip });
+  const gate = await authorizeRequest("public_read", { route: "/api/copy/permissions", ip });
   if (!gate.allowed && gate.error) {
     return Response.json(gate.error.body, { status: gate.error.status, headers: gate.error.headers });
   }
@@ -175,9 +175,9 @@ export async function POST(req: Request): Promise<Response> {
 }
 
 export async function DELETE(req: Request): Promise<Response> {
-  const { authorizeRequest } = await import("../lib/api/policy");
+  const { authorizeRequest } = await import("@/lib/api/policy");
   const ip = clientIpFrom(req.headers);
-  const gate = authorizeRequest("public_read", { route: "/api/copy/permissions", ip });
+  const gate = await authorizeRequest("public_read", { route: "/api/copy/permissions", ip });
   if (!gate.allowed && gate.error) {
     return Response.json(gate.error.body, { status: gate.error.status, headers: gate.error.headers });
   }
@@ -231,9 +231,9 @@ export async function DELETE(req: Request): Promise<Response> {
 }
 
 export async function GET(req: Request): Promise<Response> {
-  const { authorizeRequest } = await import("../lib/api/policy");
+  const { authorizeRequest } = await import("@/lib/api/policy");
   const ip = clientIpFrom(req.headers);
-  const gate = authorizeRequest("public_read", { route: "/api/copy/permissions", ip });
+  const gate = await authorizeRequest("public_read", { route: "/api/copy/permissions", ip });
   if (!gate.allowed && gate.error) {
     return Response.json(gate.error.body, { status: gate.error.status, headers: gate.error.headers });
   }
